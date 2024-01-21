@@ -223,7 +223,7 @@ if(studyarea=="BC"){
   dem_source <- rast("../Common_Files/WNA_DEM_SRT_30m_cropped.tif") ##DEM - I'm using a 30 m one
   bnd <- vect(paste("spatial_app/bdy/bdy", studyarea, "shp", sep=".")) #boundary file
   bnd <- project(bnd,"epsg:4326") # project to albers to be able to specify resolution in meters. 
-  land <- vect("C:/Users/CMAHONY/OneDrive - Government of BC/SpatialData/50k_layers/Land_Water_SimplifyPolygon.shp")
+  land <- vect("//objectstore2.nrs.bcgov/ffec/Generic_Spatial_Data/Land_Water_SimplifyPolygon.shp")
   land <- project(land, "epsg:4326")
   land <- crop(land, bnd) #have to do this because of point roberts
   bnd <- crop(bnd, land)
