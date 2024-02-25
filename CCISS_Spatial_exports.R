@@ -165,7 +165,7 @@ cciss_basic <- function(bgc_preds, selected_edatope, selected_spp, suit_table){
 ### study area setup
 ### -------------------------------------------------------
 
-studyarea <- "CDFCP"
+studyarea <- "BC"
 
 # output directory for data created in this script
 dir.create(file.path("spatial_app/data", studyarea))
@@ -312,7 +312,7 @@ clim <- climr_downscale(points_dat,
                                  which_normal = "BC",
                                  gcm_models = NULL,
                                  return_normal = TRUE, ##1961-1990 period
-                                 vars = c(list_variables(), "CMI"))
+                                 vars = list_variables())
 addVars(clim)
 identity.grid <- data.table(ID=clim$ID, GCM=rep("obs", dim(clim)[1]), SSP=rep("obs", dim(clim)[1]), RUN=rep(NA, dim(clim)[1]), PERIOD=clim$PERIOD)
 
@@ -352,7 +352,7 @@ clim <- climr_downscale(points_dat,
                                  gcm_models = NULL,
                                  historic_period = "2001_2020",
                                  return_normal = F, ##1961-1990 period
-                                 vars = c(list_variables(), "CMI"))
+                                 vars = list_variables())
 addVars(clim)
 
 ## calculate climate change
@@ -387,7 +387,7 @@ for(ssp in ssps){
                               gcm_period = period,
                               max_run = 3L,
                               return_normal = FALSE,
-                              vars = c(list_variables(), "CMI"))
+                              vars = list_variables())
       addVars(clim)
       unique(clim$GCM)
       

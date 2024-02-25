@@ -30,34 +30,65 @@ library(sf)
 library(raster)
 library(markdown)
 
-# Increase the maximum upload size to 60 MB 
-options(shiny.maxRequestSize = 60*1024^2)
+# ----------------------------------------------------
+# Generic Code
+# ----------------------------------------------------
 
 # setwd("C:/Users/CMAHONY/OneDrive - Government of BC/Shiny_Apps/CCISS_ShinyApp/spatial_app") # for local testing
 
-studyarea <- "BC"
-indir <- paste("data", studyarea, "", sep="/")
+# Increase the maximum upload size to 60 MB 
+options(shiny.maxRequestSize = 60*1024^2)
+options(scipen=999)
+
+modelMetadata <- read.csv("data/ModelList.csv")
 
 edatopes <- c("B2", "C4", "D6")
 edatope.names <- c("Poor-subxeric", "Medium-mesic", "Rich-hygric")
 
-scenarios <- c("ssp126", "ssp245")
-scenario.names=c("SSP1-2.6", "SSP2-4.5")
-scenario <- scenarios[2] # only one scenario currently supported. would need to revise the script to support more than one scenario. 
-
 period.names=c("2001-2020", "2021-2040", "2041-2060", "2061-2080", "2081-2100")
 
-bdy <- st_read(dsn = paste("bdy/bdy", studyarea, "shp", sep="."))
 P4S.epsg <- st_crs("+init=epsg:4326") # web mercator
+
+bgc.names <- read.csv(paste("data/All_BGCs_v11_21.csv", sep="."), stringsAsFactors = F) #ISSUE: likely need to update this. 
+
+#BGC subzone color scheme
+bgccolors <- read.csv("data/WNAv11_Subzone_Colours.csv", stringsAsFactors = F)
+zonecolors <- read.csv("data/WNAv11_Zone_Colours.csv", stringsAsFactors = F)
+zonecolors.BC <- read.csv("data/BGCzone_Colorscheme.csv", stringsAsFactors = F)
+zonecolors$colour[match(zonecolors.BC$zone, zonecolors$classification)] <- as.character(zonecolors.BC$HEX)
+
+## Color Schemes for species change maps
+breakpoints.suit <-   breakseq <- c(0.5,1.5,2.5,3.5)
+palette.suit <-   c("#006400", "#1E90FF", "#EEC900")
+ColScheme.suit <- colorBin(palette.suit, bins=breakpoints.suit, na.color = NA)
+breakpoints.change <- seq(-3,3,0.5)
+palette.change <- c(brewer.pal(11,"RdBu")[c(1,2,3,4,5,6)], brewer.pal(11,"RdBu")[c(6,7,8,9,10,11)])
+ColScheme.change <- colorBin(palette.change, bins=breakpoints.change, na.color = NA)
+labels.change <- breakpoints.change[-median(1:length(breakpoints.change))]
+breakpoints.binary <- seq(-1,1,0.2)
+palette.binary <- c(brewer.pal(11,"RdBu")[c(1:4,6)], brewer.pal(11,"RdBu")[c(6,8:11)])
+ColScheme.binary <- colorBin(palette.binary, bins=breakpoints.binary, na.color = NA)
+labels.binary <- paste(abs(seq(-.9,.9,0.2))*100, "%", sep="")
+
+## SPATIAL DATA for find-a-BGC
+bgc.simple <- st_read("data/bgc.simple.shp")
+bgc.maprecord <- as.character(bgc.simple$BGC)
+zone.maprecord <- bgc.maprecord
+for(i in zonecolors$classification){ zone.maprecord[grep(i,bgc.maprecord)] <- i }
+bgc.list <- sort(unique(bgc.maprecord))
+zone.list <- sort(unique(zone.maprecord))
+
+# ----------------------------------------------------
+# study area specific code
+# ----------------------------------------------------
+
+studyarea <- "CDFCP"
+indir <- paste("data", studyarea, "", sep="/")
+
+bdy <- st_read(dsn = paste("bdy/bdy", studyarea, "shp", sep="."))
 bdy <- st_transform(bdy, P4S.epsg)
 
 bbox <- as.vector(st_bbox(bdy))
-
-options(scipen=999)
-## Load the input data
-
-modelMetadata <- read.csv("data/ModelList.csv")
-# str(ecoprov.climate)
 
 ## CLIMATE DATA
 
@@ -79,7 +110,6 @@ for(i in which(variable.types=="ratio")){clim.meanChange.ratio[,i] <- clim.meanC
 
 identity <- read.csv(paste(indir,"clim.meanChange.csv", sep=""), stringsAsFactors = F)[,c(1:4)]
 
-scenarios <- sort(unique(identity$SSP))
 periods <- unique(identity$PERIOD)
 gcms <- unique(identity$GCM)[-1]
 mods <- substr(gcms,1,2)
@@ -87,9 +117,6 @@ mods <- substr(gcms,1,2)
 ColScheme.gcms <- c(brewer.pal(n=length(gcms), "Paired"))
 
 ## BGC PROJECTIONS
-
-bgc.names <- read.csv(paste("data/All_BGCs_v11_21.csv", sep="."), stringsAsFactors = F) #ISSUE: likely need to update this. 
-
 bgcs.native <- as.vector(unlist(read.csv(paste(indir,"bgcs.native.csv", sep=""))))
 zones.native <- as.vector(unlist(read.csv(paste(indir,"zones.native.csv", sep=""))))
 
@@ -104,11 +131,11 @@ r <- raster(paste(indir,"BGC.pred.ref.tif", sep=""))
 cellarea <- (res(r)[2]*111)*(res(r)[1]*111*cos(mean(extent(r)[3:4]) * pi / 180))
 bgc.area <- bgc.area*cellarea
 
-#BGC subzone color scheme
-bgccolors <- read.csv("data/WNAv11_Subzone_Colours.csv", stringsAsFactors = F)
-zonecolors <- read.csv("data/WNAv11_Zone_Colours.csv", stringsAsFactors = F)
-zonecolors.BC <- read.csv("data/BGCzone_Colorscheme.csv", stringsAsFactors = F)
-zonecolors$colour[match(zonecolors.BC$zone, zonecolors$classification)] <- as.character(zonecolors.BC$HEX)
+## add colors for units not in color scheme.
+needcolor <- bgcs.all[-which(bgcs.all%in%bgccolors$classification)]
+needcolor.zone <- needcolor
+for(i in zonecolors$classification){ needcolor.zone[grep(i,needcolor)] <- i }
+bgccolors <- rbind(bgccolors, data.frame(classification=needcolor, colour=zonecolors$colour[match(needcolor.zone, zonecolors$classification)]))
 
 ## projected area of biogeoclimatic zones
 bgc.zones <- bgcs.all
@@ -121,12 +148,6 @@ for(zone in zones){
   zone.area[, which(zones==zone)] <- if(length(s)>1) apply(bgc.area[,s], 1, sum, na.rm=T) else bgc.area[,s]
 }
 zones.all <- names(zone.area)
-
-## add colors for units not in color scheme.
-needcolor <- bgcs.all[-which(bgcs.all%in%bgccolors$classification)]
-needcolor.zone <- needcolor
-for(i in zonecolors$classification){ needcolor.zone[grep(i,needcolor)] <- i }
-bgccolors <- rbind(bgccolors, data.frame(classification=needcolor, colour=zonecolors$colour[match(needcolor.zone, zonecolors$classification)]))
 
 ## simplify and structure the biogeoclimatic area tables
 bgc.area <- bgc.area[,rev(order(apply(bgc.area, 2, sum)))] #sort by total projection area
@@ -246,27 +267,6 @@ for(edatope in edatopes){
 
 spps.all <- unique(spps.all)[order(unique(spps.all))]
 spps.native <- unique(spps.native)[order(unique(spps.native))]
-
-## Color Schemes for species change maps
-breakpoints.suit <-   breakseq <- c(0.5,1.5,2.5,3.5)
-palette.suit <-   c("#006400", "#1E90FF", "#EEC900")
-ColScheme.suit <- colorBin(palette.suit, bins=breakpoints.suit, na.color = NA)
-breakpoints.change <- seq(-3,3,0.5)
-palette.change <- c(brewer.pal(11,"RdBu")[c(1,2,3,4,5,6)], brewer.pal(11,"RdBu")[c(6,7,8,9,10,11)])
-ColScheme.change <- colorBin(palette.change, bins=breakpoints.change, na.color = NA)
-labels.change <- breakpoints.change[-median(1:length(breakpoints.change))]
-breakpoints.binary <- seq(-1,1,0.2)
-palette.binary <- c(brewer.pal(11,"RdBu")[c(1:4,6)], brewer.pal(11,"RdBu")[c(6,8:11)])
-ColScheme.binary <- colorBin(palette.binary, bins=breakpoints.binary, na.color = NA)
-labels.binary <- paste(abs(seq(-.9,.9,0.2))*100, "%", sep="")
-
-## SPATIAL DATA
-bgc.simple <- st_read("data/bgc.simple.shp")
-bgc.maprecord <- as.character(bgc.simple$BGC)
-zone.maprecord <- bgc.maprecord
-for(i in zonecolors$classification){ zone.maprecord[grep(i,bgc.maprecord)] <- i }
-bgc.list <- sort(unique(bgc.maprecord))
-zone.list <- sort(unique(zone.maprecord))
 
 # Define UI ----
 ui <- fluidPage(
