@@ -74,7 +74,7 @@ In the maps below, each colour represents the species environmental suitability 
 #| out-width: 100%
 #| out-height: 100%
 #| padding: 0px
-#| fig-cap: On medium/mesic sites Fd environmental suitability is high (E1) in the southern low elevation CWH subzones, mid slopes of the Southern Interior, and valley bottoms of the Columbia Mountains and Rocky Mountain Trench. Suitability is moderate (E2) throughout much of the Central Interior, upslope from lower elevation E1 areas in the south and southeast, and including Western Vancouver Island. Suitability is low (E3) on the Nechako Plateau and at the margins of E2 suitability throughout. Remaining areas (in white) are unsuitable for Fd under historic climates on medium/mesic sites.
+#| fig-cap: On medium/mesic sites Fd environmental suitability is high (E1) in the southern low elevation CWH subzones, mid slopes of the Southern Interior, and valley bottoms of the Columbia Mountains and Rocky Mountain Trench. Suitability is moderate (E2) throughout much of the Central Interior, upslope from lower elevation E1 areas in the south and southeast, and including western Vancouver Island. Suitability is low (E3) on the Nechako Plateau and at the margins of E2 suitability throughout. Remaining areas (in white) are unsuitable for Fd under historic climates on medium/mesic sites.
 
 fig("Historic_Suit_Map.Fd.C4.png")
 ```
@@ -87,7 +87,7 @@ fig("Historic_Suit_Map.Fd.C4.png")
 #| out-width: 100%
 #| out-height: 100%
 #| padding: 0px
-#| fig-cap: On poor/subxeric sites Fd environmental suitability is moderate to low (E2 to E3) throughout the Central and Southern Interior. Suitability is high (E1) on poor/subxeric sites bordering the Strait of Georgia and on the lower slopes of the southern Columbia Mountains and Rocky Mountain Trench. Remaining areas (in white) are unsuitable for Fd under historic climates on poor/subxeric sites.
+#| fig-cap: On poor/subxeric sites Fd environmental suitability is moderate to low (E2 to E3) throughout the majority of its range in the Interior Plateau. Suitability is high (E1) on poor/subxeric sites bordering the Strait of Georgia and on the lower slopes of the southern Columbia Mountains and Rocky Mountain Trench. Remaining areas (in white) are unsuitable for Fd under historic climates on poor/subxeric sites.
 
 fig("Historic_Suit_Map.Fd.B2.png") 
 
@@ -101,7 +101,7 @@ fig("Historic_Suit_Map.Fd.B2.png")
 #| out-width: 100%
 #| out-height: 100%
 #| padding: 0px
-#| fig-cap: Fd has a much more limited range on rich/hygric sites overall and environmental suitability is mostly moderate to low (E2-E3). Suitability is moderate (E2) around the Georgia Basin (CWHdm1) and mid slopes of the Okanagan Valley (e.g., IDFdm1) and low (E3) on rich/hygric sites of the Eastern Okanagan–Shuswap and Southern Interior Mountains. Smaller areas of high (E1) suitability exist on rich/hygric sites of the Rocky Mountain Trench (IDFdk5) and southern Vancouver Island (CDFmm). Remaining areas (in white) are unsuitable for Fd under historic climates on rich/hygric sites.
+#| fig-cap: Fd has a much more limited range on rich/hygric sites overall and environmental suitability is mostly moderate to low (E2-E3). Suitability is moderate (E2) around the Georgia Basin (CWHdm1) and mid slopes of the Okanagan Valley (e.g., IDFdm1) and low (E3) on rich/hygric sites of the Shuswap and Okanagan Highlands and Columbia Mountains. Smaller areas of high (E1) suitability exist on rich/hygric sites of the Rocky Mountain Trench (IDFdk5) and southeastern Vancouver Island (CDFmm). Remaining areas (in white) are unsuitable for Fd under historic climates on rich/hygric sites.
 
 fig("Historic_Suit_Map.Fd.D6.png")
 ```
@@ -488,7 +488,7 @@ fig("Fd_D6_alluv.png")
 
 Fd's total suitable area is projected to expand across BC over the 21st century, driven by increases in suitable area in the ESSF, SBS, and CWH. Additionally there are smaller increases in suitable area in the SBPS, MH, BWBS, MS, and ICH. This broad pattern is offset by a decrease in the suitable area in the hottest and driest zones; the IDF, CDF, BG, and PP (which represent a smaller area proportionally).
 
-Many mapped subzones within the Sub-Boreal Spruce (SBS) zone in the Skeena Region are projected to become warmer, shifting towards Interior Douglas-fir (IDF)-like climate or warmer and wetter, shifting towards Interior Cedar--Hemlock (ICH)-like climate in the future. These climates are suitable for Fd and expand the total suitable area for Fd. Similarly, on the Chilcotin Plateau, Sub-Boreal Pine--Spruce (SBPS) units are projected to shift towards IDF-like climate. The Engelmann Spruce--Subalpine Fir (ESSF) occurs on all major mountains surrounding the interior plateau (found above the MS, SBS, ICH and BWBS zones) and historically supported small populations of Fd in the warmer ESSF subzones (e.g., ESSFdh1). Warming temperatures are the likely driver of increases in suitable area for Fd projected into the ESSF zone. Fd is also projected to become suitable in a greater portion of the Coastal Western Hemlock (CWH) zone, as this area becomes warmer and drier, shifting to climates of warmer/drier CWH and Coastal Douglas-fir (CDF) subzones which are climatically suitable to Fd.
+Many mapped subzones within the Sub-Boreal Spruce (SBS) zone in the Skeena Mountains, Omineca Mountains and Rocky Mountain Foothills are projected to become warmer, shifting towards Interior Douglas-fir (IDF)-like climate or warmer and wetter, shifting towards Interior Cedar--Hemlock (ICH)-like climate in the future. These climates are suitable for Fd and expand the total suitable area for Fd. Similarly, on the Chilcotin Plateau, Sub-Boreal Pine--Spruce (SBPS) units are projected to shift towards IDF-like climate. The Engelmann Spruce--Subalpine Fir (ESSF) occurs on all major mountains surrounding the Interior Plateau (found above the MS, SBS, ICH and BWBS zones) and historically supported small populations of Fd in the warmer ESSF subzones (e.g., ESSFdh1). Warming temperatures are the likely driver of increases in suitable area for Fd projected into the ESSF zone. Fd is also projected to become suitable in a greater portion of the Coastal Western Hemlock (CWH) zone, as this area becomes warmer and drier, shifting to climates of warmer/drier CWH and Coastal Douglas-fir (CDF) subzones which are climatically suitable to Fd.
 
 The loss of environmentally suitable area in the IDF zone is driven by a shift to Bunchgrass (BG)-like climates, which does not support Fd. These broad patterns are similar across the medium/mesic (C4) and poor/subxeric (B2) site types. 
 
