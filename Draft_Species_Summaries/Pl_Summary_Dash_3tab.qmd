@@ -74,7 +74,7 @@ In the maps below, each colour represents the species environmental suitability 
 #| out-width: 100%
 #| out-height: 100%
 #| padding: 0px
-#| fig-cap: On medium/mesic sites Pl is moderately to highly suitable across much of the province. Suitability is high (E1) in the Central Interior, Sub-boreal Interior, Boreal Plains, Thompson-Okanagan Plateau and southern Rocky Mountain Trench (SBS, MS, SBPS) . Suitability is moderate (E2) in the Taiga Plains (BWBSmk) and Northern Boreal (SWB), the Fraser River Basin (IDFdk3) and the central coast (CWHvh1). Pl suitability is low (E3) on a smaller proportional area, including parts of the the lower mainland and Vancouver Island (CWH, CDF) the outer coast of Haida Gwaii (CWHvh3), and the southern Columbia Mountains (ESSF, ICH). Remaining areas (in white) are unsuitable for Pl under historic climates on medium/mesic sites.   
+#| fig-cap: On medium/mesic sites Pl is moderately to highly suitable across much of the province. Suitability is high (E1) on the Interior Plateau at higher elevation and in the northern portion, in the Boreal Plains (BWBSmw), and surrounding the southern Rocky Mountain Trench (SBS, MS, SBPS). Suitability is moderate (E2) in the Taiga Plains (BWBSmk), northern boreal forest (SWB), the Fraser River Basin (IDFdk3), the central coast (CWHvh1) and northern ICH (e.g., near Valemount and Terrace). Pl suitability is low (E3) on a smaller proportional area, including lower elevation maritime/submaritime CWH throughout the coast, the outer coast of Haida Gwaii (CWHvh3), and the southern Columbia Mountains (esp. southern Monashee Mountains; ESSF, ICH). Remaining areas (in white) are unsuitable for Pl under historic climates on medium/mesic sites.   
 
 fig("Historic_Suit_Map.Pl.C4.png")
 ```
@@ -87,7 +87,7 @@ fig("Historic_Suit_Map.Pl.C4.png")
 #| out-width: 100%
 #| out-height: 100%
 #| padding: 0px
-#| fig-cap: On poor/subxeric sites Pl is moderately suitable (E2) across much of the province, including the Taiga and Boreal Plains (BWBS), Sub-Boreal Interior (SBS), Central and Southern Interior (SBS, SBPS), western Columbia Mountains (ICH, ESSF), and the outer coast of Haida Gwaii (hypermaritime CWH). Pl suitability is high  (E1) on poor/subxeric sites in the Sub-Boreal (Pine) Spruce (SBS, & SBPS) surrounding Prince George, valley bottom of the northern Rocky Mountain Trench (moist ICH), the central coast (CWHvh1) and the mid-upper slopes of the Southern Interior (dry and very dry MS and ESSF). Pl suitability is low (E3) on on poor/subxeric sites on the eastern side of Haida Gwaii, in the Spruce-Willow-Birch (SWB) in Northern B.C., in the very dry, very cold Montane Spruce (MSvk) of the Cariboo-Chicoltin Plateau, and scattered subzones across the Southeast and southwest of the Province. Remaining areas (in white) are  unsuitable for Pl under historic climates on poor/subxeric sites.   
+#| fig-cap: On poor/subxeric sites Pl is moderately suitable (E2) across much of the province, including the Taiga and Boreal Plains (BWBS), Nechako Plateau (SBS, SBPS), Columbia Mountains (ICH, ESSF), and the outer coast of Haida Gwaii (hypermaritime CWH). Pl suitability is high (E1) on poor/subxeric sites in the Sub-Boreal (Pine) Spruce (SBS, & SBPS) surrounding Prince George, valley bottom of the northern Rocky Mountain Trench (moist ICH), the central coast (CWHvh1) and the mid-upper slopes of the Okanagan Highland and Thompson Plateau (dry and very dry MS and ESSF). Pl suitability is low (E3) in the Spruce-Willow-Birch (SWB) in northern BC, in the very dry, very cold Montane Spruce (MSvk) of the Chicoltin Plateau, at low elevation throughout the coast (e.g., CWHvm3, CWHws3, CWHwh1, CDFmm), and at low to mid elevation in the Columbia Mountains (ICH and ESSF). Remaining areas (in white) are  unsuitable for Pl under historic climates on poor/subxeric sites.
 
 fig("Historic_Suit_Map.Pl.B2.png") 
 
@@ -101,7 +101,7 @@ fig("Historic_Suit_Map.Pl.B2.png")
 #| out-width: 100%
 #| out-height: 100%
 #| padding: 0px
-#| fig-cap: Pl suitability is moderate (E2) or low (E3) on most of the rich/hygric sites in its range, throughout the interior and northwest of BC, with the exception of high sutability (E1) in parts of the Southern interior and Okanagan Range. Remaining areas (in white) are  unsuitable for Pl under historic climates on rich/hygric sites. Note that Pl is more suitable on wetter and poorer sites (e.g. bogs) across its range (not shown here).   
+#| fig-cap: Pl suitability is moderate (E2) or low (E3) on most of the rich/hygric sites in its range, throughout the Interior Plateau, northeast (BWBSmk), Columbia Mountains and outer coast, with the exception of high sutability (E1) in parts of the Thompson Plateau and Okanagan Range southwest of Kelowna (MSxk1 and ESSFxc1). Remaining areas (in white) are  unsuitable for Pl under historic climates on rich/hygric sites. Note that Pl is more suitable on wetter and poorer sites (e.g. bogs) across its range (not shown here).   
 
 fig("Historic_Suit_Map.Pl.D6.png")
 ```
@@ -112,7 +112,7 @@ fig("Historic_Suit_Map.Pl.D6.png")
 
 The pie chart to the right depicts the distribution of the total environmentally suitable area of Pl in BC by biogeoclimatic (BGC) zone, based on the climate of the historical reference period (1961--1990).
 
-Pl occupies the greatest area in the Boreal White and Black Spruce (BWBS) zone in the northeastern corner of BC and in the Sub-Boreal Spruce (SBS) zone in the Central Interior. In the BWBS zone mixed stands of Pl and black spruce are common in upland forests, and on drier sites open Pl -- lichen forests are common. In the SBS zone younger forests are dominated by Pl, alongside trembling aspen and paper birch.
+Pl occupies the greatest area in the Boreal White and Black Spruce (BWBS) zone in the northeastern corner of BC and in the Sub-Boreal Spruce (SBS) zone in the Central Interior (i.e. northern portion of the Interior Plateau). In the BWBS zone mixed stands of Pl and black spruce are common in upland forests, and on drier sites open Pl -- lichen forests are common. In the SBS zone younger forests are dominated by Pl, alongside trembling aspen and paper birch.
 
 Pl is the dominant species of the Montane Spruce (MS) and Sub-Boreal Pine -- Spruce (SBPS) zones, both small montane zones in the rain shadow of the Coast Mountains. In both zones dry soil moisture conditions and forest fires promote extensive even-aged stands of Pl.
 
@@ -230,7 +230,7 @@ fig("Pl_D6_bub.png")
 ::: card
 The CCISS model predicts that climate change will lead to a decline in Pl suitability across most of its historical range (red shades on the map), with large areas projected to become unsuitable by the end of the century (black on the map). These declines are driven primarily by physiological drought under warming climate conditions. Patterns of decline are consistent across site types, but are particularly strong in rich/hygric sites (D6 edatopes) where Pl suitability was already historically low.  
 
-Declining suitability is projected throughout the interior of BC, most pronounced across the Sub-Boreal Spruce (SBS) zone on C4 and D6 edatopes. This is driven by a shift to IDF- and ICH-like climates in this region, under which Pl has a lower suitability. Pl suitability is predicted to decline or be lost from dry Interior Douglas-fir (IDF) subzones in valley bottoms of the Kootenays and lower elevation of the Southern Interior and Central Interior. For example, the climate is projected to become unsuitable in the IDFdk3 in the Central Interior as the future climate shifts to that of drier IDF units (e.g. IDFxh1 and 2) which do not support Pl. 
+Declining suitability is projected throughout the interior of BC, most pronounced across the Sub-Boreal Spruce (SBS) zone on C4 and D6 edatopes. This is driven by a shift to IDF- and ICH-like climates in this region, under which Pl has a lower suitability. Pl suitability is predicted to decline or be lost from dry Interior Douglas-fir (IDF) subzones in valley bottoms of the Kootenays and lower elevations of the Interior Plateau. For example, the climate is projected to become unsuitable in the IDFdk3 near Williams Lake as the future climate shifts to that of drier IDF units (e.g. IDFxh1 and 2) which do not support Pl. 
 
 Suitability is projected to decline and be lost in smaller areas on Vancouver Island, the South Coast and the rain shadow of the Coast Mountains. 
 
@@ -498,7 +498,7 @@ Additionally, there is a decline in suitable area in the Coastal Western Hemlock
 
 There is a slight increase in suitable area in the Spruce--Willow--Birch (SWB) zone through the end of the century on C4 and B2 site types. Pl also becomes suitable in the Mountain Hemlock (MH) and Boreal Altai Fesuce Alpine (BAFA) zones, as Pl is historically suitable in the zones below the MH (i.e. CWH) and the BAFA (i.e. SWB and ESSF). As the climate warms, the lower elevation portions of the MH and BAFA are predicted to become suitable for Pl. 
 
-Pl suitability on D6 sites is projected to decline dramatically over the 21st century, with only a few exceptions of modest expansion of suitable area for SWB subzones in the North and Engelmann Spruce--Subalpine Fir (ESSF) subzones in the Southeast of the province (see yellow shades on the suitability change maps in the section above).
+Pl suitability on D6 sites is projected to decline dramatically over the 21st century, with only a few exceptions of modest expansion of suitable area for SWB subzones in the North and Engelmann Spruce--Subalpine Fir (ESSF) subzones in the southeast of the province (see yellow shades on the suitability change maps in the section above).
 
 # Forest health
 
